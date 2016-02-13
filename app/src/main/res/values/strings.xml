@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">PopularMovies1</string>
+    <string name="action_settings">Settings</string>
+    <string name="popularity">popularity</string>
+    <string name="rating">highest rating</string>
+    <string name="param1">param1</string>
+    <string name="param2">param2</string>
+    <string name="popularity_p1">popularity.desc</string>
+    <string name="popularity_p2"></string>
+    <string name="Pref">Mypref</string>
+    <string name="rating_p1">vote_average.desc</string>
+    <string name="rating_p2">vote_count.gte=1000</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_detail">Movie Details</string>
+    <string name="MY_EXTRA">my_data</string>
+    <string name="dummy_title">TITLE GOES HERE</string>
+    <string name="dummy_releasedate">RELEASE DATE</string>
+    <string name="dummy_synopse">Synopsis GOES HERE</string>
+</resources>
