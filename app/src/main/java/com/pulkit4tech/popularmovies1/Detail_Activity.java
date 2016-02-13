@@ -44,7 +44,9 @@ public class Detail_Activity extends AppCompatActivity implements View.OnClickLi
     private void populate() {
 
         title.setText(data.movie_name);
-        Picasso.with(getBaseContext()).load(data.poster_url).placeholder(getResources().getDrawable(R.drawable.placeholder)).into(
+        Picasso.with(getBaseContext()).load(data.poster_url).placeholder(getResources().getDrawable(R.drawable.placeholder))
+                .error(getResources().getDrawable(R.drawable.ic_error_black_48dp))
+                .into(
                 (ImageView) findViewById(R.id.main_poster));
         synopsis.setText(data.overview);
         rbar.setRating(data.movie_rating / 2f);
