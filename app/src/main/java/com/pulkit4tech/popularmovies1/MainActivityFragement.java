@@ -127,6 +127,7 @@ public class MainActivityFragement extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(getContext(),Detail_Activity.class);
+
                 i.putExtra(getString(R.string.MY_EXTRA),(Parcelable)data_to_be_filled.get(position));
                 startActivity(i);
             }
@@ -140,7 +141,7 @@ public class MainActivityFragement extends Fragment {
 
          String baseurl = "http://api.themoviedb.org/3/discover/movie?sort_by=" + param1 + "&" + param2
                 + "&api_key=" + new KEY().getkey();
-         final String baseimgurl = "http://image.tmdb.org/t/p/w185/";
+         final String baseimgurl = "http://image.tmdb.org/t/p/"+getString(R.string.thumbnail_quality)+"/";
 
         //clearing data
         clear_buffer();

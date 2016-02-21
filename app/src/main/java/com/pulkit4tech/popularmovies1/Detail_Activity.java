@@ -44,10 +44,16 @@ public class Detail_Activity extends AppCompatActivity implements View.OnClickLi
     private void populate() {
 
         title.setText(data.movie_name);
-        Picasso.with(getBaseContext()).load(data.poster_url).placeholder(getResources().getDrawable(R.drawable.placeholder))
+
+        //using high quality poster for detail activity
+        String poster = data.poster_url;
+        //poster = poster.replace(getString(R.string.thumbnail_quality),getString(R.string.detail_quality));
+
+
+        Picasso.with(getBaseContext()).load(poster).placeholder(getResources().getDrawable(R.drawable.placeholder))
                 .error(getResources().getDrawable(R.drawable.ic_error_black_48dp))
                 .into(
-                (ImageView) findViewById(R.id.main_poster));
+                        (ImageView) findViewById(R.id.main_poster));
         synopsis.setText(data.overview);
         rbar.setRating(data.movie_rating / 2f);
         ratings.setText((float) Math.round(data.movie_rating*10d)/10d + "/10");
