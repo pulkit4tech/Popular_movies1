@@ -5,7 +5,7 @@ package com.pulkit4tech.popularmovies1;
  */
 public class KEY {
 
-        public String Api_key = "";
+        public String Api_key = "e187a19c9f9d633ba6d82a6f4e3dd58c";
         public String getkey(){
             return Api_key;
         }
