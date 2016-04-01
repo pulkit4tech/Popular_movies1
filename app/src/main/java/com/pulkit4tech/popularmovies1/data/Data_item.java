@@ -1,4 +1,4 @@
-package com.pulkit4tech.popularmovies1;
+package com.pulkit4tech.popularmovies1.data;
 
 import android.os.Parcel;
 import android.os.Parcelable;

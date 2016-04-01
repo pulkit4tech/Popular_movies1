@@ -1,4 +1,4 @@
-package com.pulkit4tech.popularmovies1;
+package com.pulkit4tech.popularmovies1.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+import com.pulkit4tech.popularmovies1.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

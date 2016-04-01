@@ -10,6 +10,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pulkit4tech.popularmovies1.data.Data_item;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;

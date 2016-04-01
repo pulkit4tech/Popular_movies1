@@ -1,4 +1,4 @@
-package com.pulkit4tech.popularmovies1;
+package com.pulkit4tech.popularmovies1.fragement;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +22,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.pulkit4tech.popularmovies1.data.Data_item;
+import com.pulkit4tech.popularmovies1.Detail_Activity;
+import com.pulkit4tech.popularmovies1.KEY;
+import com.pulkit4tech.popularmovies1.R;
+import com.pulkit4tech.popularmovies1.adapter.ImageAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
