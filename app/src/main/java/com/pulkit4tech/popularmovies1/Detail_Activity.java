@@ -1,6 +1,9 @@
 package com.pulkit4tech.popularmovies1;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pulkit4tech.popularmovies1.adapter.MyPageAdapter;
 import com.pulkit4tech.popularmovies1.data.Data_item;
 import com.squareup.picasso.Picasso;
 
@@ -21,12 +25,13 @@ import java.text.SimpleDateFormat;
 public class Detail_Activity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView title;
-    private TextView synopsis;
     private TextView release_date;
     private TextView ratings;
     private RatingBar rbar;
     private Data_item data;
     private ImageButton fab;
+    private ViewPager pager;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,23 @@ public class Detail_Activity extends AppCompatActivity implements View.OnClickLi
         initialize();
         //populating fields
         populate();
+
+        FragmentManager fm = getSupportFragmentManager();
+        MyPageAdapter adapter = new MyPageAdapter(fm,data);
+        pager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(pager);
+        pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setTabsFromPagerAdapter(adapter);
+
+//        pager.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                v.getParent().requestDisallowInterceptTouchEvent(true);
+//                return false;
+//            }
+//        });
+
+      //  synopsis.setText(data.overview);
     }
 
     private void populate() {
@@ -55,7 +77,7 @@ public class Detail_Activity extends AppCompatActivity implements View.OnClickLi
                 .error(getResources().getDrawable(R.drawable.ic_error_black_48dp))
                 .into(
                         (ImageView) findViewById(R.id.main_poster));
-        synopsis.setText(data.overview);
+
         rbar.setRating(data.movie_rating / 2f);
         ratings.setText((float) Math.round(data.movie_rating*10d)/10d + "/10");
 
@@ -78,11 +100,12 @@ public class Detail_Activity extends AppCompatActivity implements View.OnClickLi
 
 
         title = (TextView) findViewById(R.id.movie_title);
-        synopsis = (TextView) findViewById(R.id.synopsis);
         release_date = (TextView) findViewById(R.id.release_date);
         ratings = (TextView) findViewById(R.id.rating);
         rbar = (RatingBar)findViewById(R.id.ratingbar);
         fab = (ImageButton)findViewById(R.id.fab);
+        pager = (ViewPager) findViewById(R.id.view_pager);
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
     }
 

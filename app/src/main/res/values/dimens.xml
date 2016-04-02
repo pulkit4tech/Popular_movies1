@@ -5,7 +5,9 @@
     <dimen name="image_height">200sp</dimen>
     <dimen name="image_padding">1sp</dimen>
     <dimen name="rating_bar_padding">2sp</dimen>
-    <dimen name="main_poster_height">300sp</dimen>
+    <dimen name="main_poster_height">250sp</dimen>
     <dimen name="Title_padding">10sp</dimen>
     <dimen name="title_height">60sp</dimen>
+    <dimen name="Pager_height">250sp</dimen>
+    <dimen name="Tab_height">48sp</dimen>
 </resources>
